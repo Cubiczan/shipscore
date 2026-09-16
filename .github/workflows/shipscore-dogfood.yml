@@ -1,0 +1,30 @@
+# Dogfood: ShipScore scans its own repository on every push and PR.
+# The dashboard, docs, and submission all cite this workflow as proof the
+# scanner runs from commit one.
+
+name: ShipScore (dogfood)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run ShipScore on this repo
+        id: shipscore
+        uses: ./
+        with:
+          threshold: '0' # placeholder repo — tighten to 60 when the real engine lands
+          categories: design,ship,run,secure,test
+
+      - name: Report artifact
+        run: |
+          echo "Overall score: ${{ steps.shipscore.outputs.score }}"
