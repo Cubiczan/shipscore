@@ -3,8 +3,9 @@
 **Lighthouse for the AI era.**
 
 An open-source agent that audits any repository shipping AI features — scores it **0–100**
-across **Design, Ship, Run, Secure, Test** — and opens real fix PRs: guardrail middleware,
-eval harnesses, CI gates.
+across **Design, Ship, Run, Secure, Test** — and posts a category-breakdown review on every
+PR. Fix-PR authoring (guardrail middleware, eval harnesses, CI gates) is the v0.1 goal —
+see [Status](#status-v0-skeleton).
 
 Built by **Team Dash** for the
 [WeAreDevelopers Hackathon](https://lablab.ai/ai-hackathons/wearedevelopers-hackathon)
