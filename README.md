@@ -33,6 +33,8 @@ secure, and test* software in the AI era. **Those five verbs are the score.**
 | 🛡️ **Secure** | Every tool call and external string hostile until proven safe — injection surfaces, least-privilege |
 | 🧪 **Test** | Evals in CI, not vibes — golden sets, adversarial cases, regression gates |
 
+All five categories are scored by the v0 scanner's filename/content heuristics (`action/main.mjs`); AST-based analysis (ts-morph) replaces them in v0.1 — see [Status](#status-v0-skeleton).
+
 ## Usage — one block of YAML
 
 ```yaml
@@ -52,10 +54,12 @@ jobs:
         with:
           threshold: 60   # block merge below this score
           categories: design,ship,run,secure,test
-          fix-prs: true   # agent opens guardrail + eval PRs
+          fix-prs: true   # accepted for forward compat; PR authoring ships in v0.1 (action/main.mjs)
 ```
 
-ShipScore posts the score as a PR comment, labels findings by severity, and opens fix PRs.
+ShipScore scans AI touchpoints with filename/content heuristics (`action/main.mjs`) and
+posts the category-breakdown score as a PR comment; severity labels and fix-PR authoring
+land in v0.1.
 This repo **dogfoods itself**: the [`shipscore-dogfood`](.github/workflows/shipscore-dogfood.yml)
 workflow runs the action on every push.
 
