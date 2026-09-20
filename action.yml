@@ -39,7 +39,7 @@ runs:
   steps:
     - id: scan
       shell: bash
-      run: node "${{ github.action_path }}/main.mjs"
+      run: node "${{ github.action_path }}/action/main.mjs"
       env:
         INPUT_THRESHOLD: ${{ inputs.threshold }}
         INPUT_CATEGORIES: ${{ inputs.categories }}
