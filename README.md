@@ -15,6 +15,16 @@ online build Sept 26 – Oct 5, 2026).
 **Try it live:** [shipscore-gamma.vercel.app](https://shipscore-gamma.vercel.app)
 — paste any public GitHub URL and watch it score.
 
+<!-- product-screenshots:start -->
+## Product screenshots
+
+Live landing page with the example category scorecard. The displayed score is demo UI, not an audit of this repository.
+
+![shipscore product interface](docs/screenshots/product-overview.png)
+
+Captured from the [live UI](https://shipscore-gamma.vercel.app) on October 2, 2026. No payment, generation, or other action was submitted to create this capture.
+<!-- product-screenshots:end -->
+
 ## Why
 
 Everyone is shipping AI features. Almost nobody is shipping them safely:
